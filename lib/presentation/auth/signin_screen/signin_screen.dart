@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopywell/presentation/widgets/text_field_widget.dart';
+import 'package:shopywell/utils/image_res.dart';
 import 'package:shopywell/utils/theme.dart';
 
 // ignore: must_be_immutable
@@ -19,6 +20,7 @@ class SigninScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SizedBox(height: 20),
               Text(
                 "Welcome \nBack!",
                 style: Theme.of(context).textTheme.headlineLarge,
@@ -36,19 +38,17 @@ class SigninScreen extends StatelessWidget {
                 controller: passCtr,
                 obscureText: true,
               ),
-              Row(
-                children: [
-                  Spacer(),
-                  TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      "Forgot Password?",
-                      style: Theme.of(context).textTheme.titleMedium,
-                    ),
+              Align(
+                alignment: Alignment.centerRight,
+                child: TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    "Forgot Password?",
+                    style: Theme.of(context).textTheme.titleMedium,
                   ),
-                ],
+                ),
               ),
-              SizedBox(height: 31),
+              SizedBox(height: 52),
               Container(
                 height: 55,
                 width: MediaQuery.of(context).size.width,
@@ -61,6 +61,39 @@ class SigninScreen extends StatelessWidget {
                     "Login",
                     style: Theme.of(context).textTheme.labelLarge,
                   ),
+                ),
+              ),
+              SizedBox(height: 75),
+              Center(
+                child: Text(
+                  "- OR Continue with -",
+                  style: Theme.of(context).textTheme.displaySmall,
+                ),
+              ),
+              SizedBox(height: 20),
+              Center(child: Image.asset(ImageRes.buttons, width: 185)),
+              SizedBox(height: 28),
+              Center(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Create an Account? ",
+                      style: Theme.of(context).textTheme.displaySmall,
+                    ),
+                    GestureDetector(
+                      onTap: () {},
+                      child: Text(
+                        "Sign Up",
+                        style: Theme.of(
+                          context,
+                        ).textTheme.displaySmall?.copyWith(
+                          color: AppTheme.primaryColor,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],

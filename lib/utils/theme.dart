@@ -52,14 +52,14 @@ abstract class AppTheme {
         color: black,
       ),
       displaySmall: TextStyle(
-        fontSize: 12,
+        fontSize: 15,
         fontWeight: FontWeight.w500,
         color: lightColor,
       ),
 
       // Section Titles
       headlineLarge: TextStyle(
-        fontSize: 30,
+        fontSize: 36,
         fontWeight: FontWeight.bold,
         color: black,
       ),
