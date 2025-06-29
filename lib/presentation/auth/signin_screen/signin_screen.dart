@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopywell/presentation/auth/signin_screen/forgot_password_screen.dart';
 import 'package:shopywell/presentation/auth/signup/signup_screen.dart';
 import 'package:shopywell/presentation/widgets/button_widgets.dart';
 import 'package:shopywell/presentation/widgets/text_field_widget.dart';
@@ -43,7 +44,14 @@ class SigninScreen extends StatelessWidget {
               Align(
                 alignment: Alignment.centerRight,
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ForgotPasswordScreen(),
+                      ),
+                    );
+                  },
                   child: Text(
                     "Forgot Password?",
                     style: Theme.of(context).textTheme.titleMedium,
