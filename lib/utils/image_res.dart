@@ -5,4 +5,5 @@ class ImageRes {
   static const String splash3 = "assets/images/splash3.png";
   static const String buttons = "assets/images/Buttons.png";
   static const String startImg = "assets/images/start_img.png";
+  static const String profile = "assets/images/profile.png";
 }

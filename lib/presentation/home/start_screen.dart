@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopywell/presentation/widgets/bottom_navigation_bar_page.dart';
 import 'package:shopywell/presentation/widgets/button_widgets.dart';
 import 'package:shopywell/utils/image_res.dart';
 import 'package:shopywell/utils/theme.dart';
@@ -36,7 +37,17 @@ class StartScreen extends StatelessWidget {
               ).textTheme.displaySmall?.copyWith(color: AppTheme.white),
             ),
             SizedBox(height: 44),
-            ButtonWidget(text: "Get Started"),
+            ButtonWidget(
+              text: "Get Started",
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => BottomNavigationBarPage(),
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),
