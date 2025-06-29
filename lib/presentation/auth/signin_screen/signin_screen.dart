@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopywell/presentation/auth/signin_screen/forgot_password_screen.dart';
 import 'package:shopywell/presentation/auth/signup/signup_screen.dart';
+import 'package:shopywell/presentation/home/start_screen.dart';
 import 'package:shopywell/presentation/widgets/button_widgets.dart';
 import 'package:shopywell/presentation/widgets/text_field_widget.dart';
 import 'package:shopywell/utils/image_res.dart';
@@ -59,7 +60,15 @@ class SigninScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 52),
-              ButtonWidget(text: 'Login'),
+              ButtonWidget(
+                text: 'Login',
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => StartScreen()),
+                  );
+                },
+              ),
               SizedBox(height: 75),
               Center(
                 child: Text(
