@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:shopywell/presentation/auth/signup/signup_screen.dart';
+import 'package:shopywell/presentation/auth/signin_screen/signin_screen.dart';
 import 'package:shopywell/presentation/widgets/button_widgets.dart';
 import 'package:shopywell/presentation/widgets/text_field_widget.dart';
 import 'package:shopywell/utils/image_res.dart';
 import 'package:shopywell/utils/theme.dart';
 
 // ignore: must_be_immutable
-class SigninScreen extends StatelessWidget {
-  SigninScreen({super.key});
+class SignUpScreen extends StatelessWidget {
+  SignUpScreen({super.key});
 
   TextEditingController usernameCtr = TextEditingController();
   TextEditingController passCtr = TextEditingController();
+  TextEditingController confirmCtr = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,7 @@ class SigninScreen extends StatelessWidget {
             children: [
               SizedBox(height: 20),
               Text(
-                "Welcome \nBack!",
+                "Create an \naccount",
                 style: Theme.of(context).textTheme.headlineLarge,
               ),
               SizedBox(height: 36),
@@ -40,18 +41,20 @@ class SigninScreen extends StatelessWidget {
                 controller: passCtr,
                 obscureText: true,
               ),
-              Align(
-                alignment: Alignment.centerRight,
-                child: TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    "Forgot Password?",
-                    style: Theme.of(context).textTheme.titleMedium,
-                  ),
-                ),
+              SizedBox(height: 31),
+              TextFieldWidget(
+                hintText: 'Confirm Password',
+                prefixIcon: Icons.lock_rounded,
+                controller: confirmCtr,
+                obscureText: true,
               ),
-              SizedBox(height: 52),
-              ButtonWidget(text: 'Login'),
+              SizedBox(height: 19),
+              Text(
+                "By clicking the Register button, you agree to the public offer",
+                style: Theme.of(context).textTheme.displaySmall,
+              ),
+              SizedBox(height: 38),
+              ButtonWidget(text: 'Create Account'),
               SizedBox(height: 75),
               Center(
                 child: Text(
@@ -67,7 +70,7 @@ class SigninScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "Create an Account? ",
+                      "I already have an Account ",
                       style: Theme.of(context).textTheme.displaySmall,
                     ),
                     GestureDetector(
@@ -75,12 +78,12 @@ class SigninScreen extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => SignUpScreen(),
+                            builder: (context) => SigninScreen(),
                           ),
                         );
                       },
                       child: Text(
-                        "Sign Up",
+                        "Login",
                         style: Theme.of(
                           context,
                         ).textTheme.displaySmall?.copyWith(
