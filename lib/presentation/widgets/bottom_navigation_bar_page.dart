@@ -29,42 +29,50 @@ class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: _pages[_currentIndex],
-      bottomNavigationBar: BottomAppBar(
-        shape: const CircularNotchedRectangle(),
-        notchMargin: 6,
-        child: SizedBox(
-          height: 70,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: <Widget>[
-              _buildNavItem(icon: Icons.home_outlined, label: 'Home', index: 0),
-              _buildNavItem(
-                icon: Icons.favorite_border,
-                label: 'Wishlist',
-                index: 1,
-              ),
-              const SizedBox(width: 38), // Space for center FAB
-              _buildNavItem(icon: Icons.search, label: 'Search', index: 3),
-              _buildNavItem(
-                icon: Icons.settings_outlined,
-                label: 'Setting',
-                index: 4,
-              ),
-            ],
+    return MediaQuery.removeViewInsets(
+       removeBottom: true,
+    context: context,
+      child: Scaffold(
+         resizeToAvoidBottomInset: false,
+        body: _pages[_currentIndex],
+        bottomNavigationBar: BottomAppBar(
+          shape: const CircularNotchedRectangle(),
+          notchMargin: 6,
+          child: SizedBox(
+            height: 70,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: <Widget>[
+                _buildNavItem(icon: Icons.home_outlined, label: 'Home', index: 0),
+                _buildNavItem(
+                  icon: Icons.favorite_border,
+                  label: 'Wishlist',
+                  index: 1,
+                ),
+                const SizedBox(width: 38),
+                _buildNavItem(icon: Icons.search, label: 'Search', index: 3),
+                _buildNavItem(
+                  icon: Icons.settings_outlined,
+                  label: 'Setting',
+                  index: 4,
+                ),
+              ],
+            ),
           ),
         ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: AppTheme.white,
-        elevation: 0,
-        shape: const CircleBorder(),
-        onPressed: () => _onTabTapped(2),
-        child: Icon(
-          Icons.shopping_cart_outlined,
-          color: _currentIndex == 2 ? AppTheme.buttonColor : Colors.black,
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        floatingActionButton: Transform.translate(
+           offset: const Offset(0, 10),
+          child: FloatingActionButton(
+            backgroundColor: AppTheme.white,
+            elevation: 0,
+            shape: const CircleBorder(),
+            onPressed: () => _onTabTapped(2),
+            child: Icon(
+              Icons.shopping_cart_outlined,
+              color: _currentIndex == 2 ? AppTheme.buttonColor : Colors.black,
+            ),
+          ),
         ),
       ),
     );

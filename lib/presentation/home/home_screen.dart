@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shopywell/utils/image_res.dart';
+import 'package:shopywell/presentation/widgets/home_appbar_widget.dart';
+import 'package:shopywell/presentation/widgets/search_textfield_widget.dart';
 import 'package:shopywell/utils/theme.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -8,41 +9,18 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        centerTitle: true,
-
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 16),
-          child: CircleAvatar(
-            radius: 22,
-            backgroundColor: AppTheme.secondaryColor,
-            child: Icon(Icons.menu_rounded, color: Colors.black),
-          ),
-        ),
-        title: Image.asset(ImageRes.logo, width: 100, fit: BoxFit.contain),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 16),
-            child: CircleAvatar(
-              radius: 22,
-              backgroundImage: AssetImage(ImageRes.profile),
-              backgroundColor: Colors.transparent,
-            ),
-          ),
-        ],
-      ),
+      backgroundColor: AppTheme.scaffoldBgColor,
+      appBar: HomeAppbarWidget(),
       body: Container(
+        width: MediaQuery.of(context).size.width,
         padding: EdgeInsets.all(32),
         child: Column(
           children: [
-            Row(
-              children: [
-              ],
-            ),
+            SearchTextFieldWidget(),
           ],
         ),
       ),
     );
   }
 }
+

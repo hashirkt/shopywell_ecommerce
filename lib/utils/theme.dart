@@ -9,7 +9,7 @@ abstract class AppTheme {
     0xFFF40000,
   ); // Used for buttons, highlights
   static const Color secondaryColor = Color(0xFFF3F3F3);
-  static const Color scaffoldBgColor = Colors.white;
+  static const Color scaffoldBgColor = Color(0XFFFDFDFD);
   static const Color borderColor = Color(0xffA8A8A9);
   static const Color lightColor = Color(0xFF676767);
   static const Color lightGreenColor = Color(0x26489270);
