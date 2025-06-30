@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shopywell/presentation/auth/signin_screen/signin_screen.dart';
+import 'package:shopywell/presentation/splash_screen/splash_screen.dart';
 import 'package:shopywell/utils/theme.dart';
 
 void main() {
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           theme: AppTheme.lightTheme,
           debugShowCheckedModeBanner: false,
-          home: SigninScreen(),
+          home: SplashScreen(),
         );
       },
     );
