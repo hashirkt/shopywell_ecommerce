@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:shopywell/presentation/auth/signin_screen/signin_screen.dart';
 import 'package:shopywell/presentation/splash_screen/onboarding_screen.dart';
 import 'package:shopywell/utils/image_res.dart';
 

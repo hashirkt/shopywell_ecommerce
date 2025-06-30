@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopywell/presentation/home/widgets/home_content_widget.dart';
 import 'package:shopywell/presentation/widgets/home_appbar_widget.dart';
 import 'package:shopywell/presentation/widgets/search_textfield_widget.dart';
 import 'package:shopywell/utils/theme.dart';
@@ -17,10 +18,10 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             SearchTextFieldWidget(),
+            Expanded(child: HomePageContent()),
           ],
         ),
       ),
     );
   }
 }
-
