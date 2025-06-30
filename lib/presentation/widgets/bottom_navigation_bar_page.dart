@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopywell/presentation/home/home_screen.dart';
+import 'package:shopywell/presentation/wishlist_screen/wishlist_screen.dart';
 import 'package:shopywell/utils/theme.dart';
 
 class BottomNavigationBarPage extends StatefulWidget {
@@ -15,10 +16,10 @@ class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
 
   final List<Widget> _pages = const [
     HomeScreen(), // Home
-    Placeholder(), // Wishlist
-    Placeholder(), // Cart
-    Placeholder(), // Search
-    Placeholder(), // Setting
+    WishlistScreen(), // Wishlist
+    Center(child: Text("Cart Screen")), // Cart
+    Center(child: Text("Search Screen")), // Search
+    Center(child: Text("Settings Screen")), // Setting
   ];
 
   void _onTabTapped(int index) {
@@ -30,10 +31,10 @@ class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
   @override
   Widget build(BuildContext context) {
     return MediaQuery.removeViewInsets(
-       removeBottom: true,
-    context: context,
+      removeBottom: true,
+      context: context,
       child: Scaffold(
-         resizeToAvoidBottomInset: false,
+        resizeToAvoidBottomInset: false,
         body: _pages[_currentIndex],
         bottomNavigationBar: BottomAppBar(
           shape: const CircularNotchedRectangle(),
@@ -43,7 +44,11 @@ class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
-                _buildNavItem(icon: Icons.home_outlined, label: 'Home', index: 0),
+                _buildNavItem(
+                  icon: Icons.home_outlined,
+                  label: 'Home',
+                  index: 0,
+                ),
                 _buildNavItem(
                   icon: Icons.favorite_border,
                   label: 'Wishlist',
@@ -62,7 +67,7 @@ class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: Transform.translate(
-           offset: const Offset(0, 10),
+          offset: const Offset(0, 10),
           child: FloatingActionButton(
             backgroundColor: AppTheme.white,
             elevation: 0,

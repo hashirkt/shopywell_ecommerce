@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopywell/presentation/home/widgets/banner_widget.dart';
+import 'package:shopywell/presentation/widgets/product_card_widget.dart';
 import 'package:shopywell/utils/image_res.dart';
 import 'package:shopywell/utils/theme.dart';
 
@@ -105,17 +106,17 @@ class HomePageContent extends StatelessWidget {
           Row(
             children: [
               Expanded(
-                child: _productCard(
-                  "Women Dress",
-                  ImageRes.women,
+                child: ProductCardWidget(
+                  name: "Women Dress",
+                  imagePath: ImageRes.women,
                   price: "\$25.99",
                 ),
               ),
               const SizedBox(width: 12),
               Expanded(
-                child: _productCard(
-                  "Nike Sneakers",
-                  ImageRes.men,
+                child: ProductCardWidget(
+                  name: "Nike Sneakers",
+                  imagePath: ImageRes.men,
                   price: "\$99.99",
                 ),
               ),
@@ -166,7 +167,11 @@ class HomePageContent extends StatelessWidget {
               mainAxisSpacing: 12,
               childAspectRatio: 0.75,
             ),
-            itemBuilder: (_, index) => _productCard("New Item", ImageRes.kids),
+            itemBuilder:
+                (_, index) => ProductCardWidget(
+                  name: "New Item",
+                  imagePath: ImageRes.kids,
+                ),
           ),
 
           const SizedBox(height: 20),
@@ -200,33 +205,33 @@ class HomePageContent extends StatelessWidget {
     );
   }
 
-  Widget _productCard(
-    String name,
-    String imagePath, {
-    String price = "\$49.99",
-  }) {
-    return Container(
-      decoration: BoxDecoration(
-        color: AppTheme.white,
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          AspectRatio(
-            aspectRatio: 1,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(12),
-              child: Image.asset(imagePath, fit: BoxFit.cover),
-            ),
-          ),
-          const SizedBox(height: 6),
-          Text(name, style: const TextStyle(fontWeight: FontWeight.w500)),
-          Text(price, style: const TextStyle(color: Colors.red)),
-        ],
-      ),
-    );
-  }
+  // Widget _productCard(
+  //   String name,
+  //   String imagePath, {
+  //   String price = "\$49.99",
+  // }) {
+  //   return Container(
+  //     decoration: BoxDecoration(
+  //       color: AppTheme.white,
+  //       borderRadius: BorderRadius.circular(10),
+  //     ),
+  //     child: Column(
+  //       crossAxisAlignment: CrossAxisAlignment.start,
+  //       children: [
+  //         AspectRatio(
+  //           aspectRatio: 1,
+  //           child: ClipRRect(
+  //             borderRadius: BorderRadius.circular(12),
+  //             child: Image.asset(imagePath, fit: BoxFit.cover),
+  //           ),
+  //         ),
+  //         const SizedBox(height: 6),
+  //         Text(name, style: const TextStyle(fontWeight: FontWeight.w500)),
+  //         Text(price, style: const TextStyle(color: Colors.red)),
+  //       ],
+  //     ),
+  //   );
+  // }
 
   Widget _specialOfferCard() {
     return Container(
